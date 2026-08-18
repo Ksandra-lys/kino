@@ -1,0 +1,19 @@
+{
+  "name": "kino",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  },
+  "dependencies": {
+    "intl-tel-input": "^29.1.2",
+    "libphonenumber-js": "^1.13.8"
+  }
+}

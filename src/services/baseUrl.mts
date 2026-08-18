@@ -1,0 +1,1 @@
+export const apiBaseUrl:string = "https://kinoplay.shop" 

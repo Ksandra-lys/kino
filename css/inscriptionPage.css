@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-family: "DM Sans", sans-serif;
+}
+
+#container {
+    background-color: #1a1028;
+    height: 100dvh;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 0 auto;
+}
+
+/*****DEBUT DU HEADER****/
+.header_container {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.back_btn {
+    color: #676070;
+    justify-self: flex-start;
+    font-size: 12px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.header_text {
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+    justify-self: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header_line {
+    width: 100%;
+    background-color: #2b2238;
+    height: 1px;
+    margin-top: 8px;
+}
+
+
+/****FIN DU HEADER****/
+
+/****DEBUT DU MAIN****/
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #5d5667;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 60px;
+    gap: 10px;
+}
+
+/*****INPUT TYPE FILE*****/
+.profile_picture_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding-bottom: 20px;
+    gap: 10px;
+}
+
+.profile_picture_icon {
+    background-color: #29102a;
+    border: dashed 2px #851739;
+    border-radius: 100%;
+    width: 98px;
+    height: 98px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#photo {
+    display: none;
+}
+
+#preview {
+    width: 40px;
+    height: 40px;
+}
+
+#preview.active {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%; 
+    object-fit: cover;
+}
+/****FIN INPUT TYPE FILE***/
+
+.inscription_form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;   
+}
+
+/****INPUT TYPE TEXT**/
+.firstname_container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+}
+.email_container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+/******INPUT TYPE TEL****/ 
+.country_container {
+    width: 70px;
+    height: 50px;
+    background-color: #2a2037;
+    border: solid 1px #3f364b;
+    border-radius: 10px;
+}
+
+.iti__arrow {
+    display: none;
+} 
+
+.iti__selected-dial-code {
+    font-weight: 600;
+    color: #898390;
+}
+.iti__country-selector {
+    top: 40px;
+    height: 140px !important;
+    
+}
+.iti__country-selector.active{
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+.iti__country-list{
+    max-height: 100px !important;
+}
+
+.phone_container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+input[type="text"],
+input[type="tel"], input[type="email"] {
+    background-color: #2a2037;
+    height: 50px;
+    width: 100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid 1px #3f364b;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: "DM Sans", sans-serif;
+    color: white;
+}
+input[type="tel"].active{
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+input:focus {
+    border-color: #c91b46;
+    outline: none;
+    background-color: transparent;
+    color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus{
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0 1000px rgb(42, 32, 55) inset;
+}   
+
+.errorMsg {
+    font-size: 13px;
+    font-weight: bolder;
+    color: #851739;
+}
+
+label {
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.terms_of_use {
+    font-size: 11px;
+    display: flex;
+    align-self: center;
+}
+
+/****FIN DU MAIN****/
+
+/******DEBUT DU FOOTER****/
+footer {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+.footer_line {
+    width: 100%;
+    background-color: #2b2238;
+    height: 1px;
+}
+
+button {
+    background-color: #e11d48;
+    width: 90%;
+    border-radius: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: 5px 5px 15px rgba(225, 29, 72, 0.4);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 12px;
+    font-family: "DM Sans", sans-serif;
+    gap: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #e11d48;
+    width: 90%;
+    border-radius: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none; 
+    box-shadow: 5px 5px 15px rgba(225, 29, 72, 0.4);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    font-family: "DM Sans", sans-serif;
+    gap: 5px;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+button span {
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+}
+.redirectToLoginPage{
+    font-size: 14px;
+    color: #5d5667;
+    font-weight: bolder;
+    padding-top: 10px;
+    cursor: pointer;
+}

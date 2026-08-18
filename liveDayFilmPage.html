@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/liveDayFilmPage.css">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <span class="back_btn">← Retour</span>
+            <span class="title">Samedi Ciné</span>
+            <span class="date">Vendredi</span>
+        </header>
+        <main>
+            <div class="live_section_container">
+                <video src="ma-video.mp4" width="640" height="360" class="live_section_video" controls>
+                    Votre navigateur ne prend pas en charge la lecture de vidéos.
+                </video>
+            </div>
+            <div class="comment_section_container">
+                <div class="film_information">
+                    <div class="film_scenarist_name">
+                        <span class="film_name">Anora</span>
+                        <span class="scenarist_name">Sean Baker · 2024 · 1h 42</span>
+                    </div>
+                    <span class="film_genre">Comédie dramatique</span>
+                </div>
+                <div class="line"></div>
+                <div class="comment_section">
+                    <div class="comment_section_top">
+                        <span>CHAT</span>
+                        <span>● En direct · 5</span>
+                    </div>
+                    <div class="comment_section_bottom_container">
+                        <div class="comment_section_bottom">
+                            <span class="user_profile">L</span>
+                            <div class="comments_container">
+                                <div class="comments_info">
+                                    <div class="name">Léa</div>
+                                    <div class="hour">47:11</div>
+                                </div>
+                                <div class="comments">La scène des arbres 😭 trop belle</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer_line"></div>
+            <div class="footer_text">
+                <span class="user_profile">T</span>
+                <textarea name="commentInput" id="commentInput" placeholder="Commenter..."></textarea>
+                <button class="publish_btn">→</button>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="/src/js/liveDayFilmPage.ts" type="module"></script>
+
+</html>

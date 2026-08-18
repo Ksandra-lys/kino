@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/liveDayInfoPage.css">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <span class="back_btn">← Retour</span>
+            <span class="title">Débat Live</span>
+            <div class="date_circle">
+                <div class="circle"></div>
+                <span class="date">LIVE</span>
+            </div>
+        </header>
+        <main>
+            <div class="comment_section_container">
+                <div class="choiced_theme_container">
+                    <span class="theme_title">L'IA va-t-elle remplacer les développeurs ?</span>
+                    <div class="choiced_theme">
+                        <div class="choiced_theme_top">
+                            <img src="/assets/icons/users.svg" alt="">
+                            <span class="participants">18 participants</span>
+                        </div>
+                        <div class="choiced_theme_bottom">
+                            <img src="/assets/icons/mic.svg" alt="">
+                            <span>Audio · IA transcrit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment_section">
+                    <div class="comment_section_top">
+                        <div class="comment_section_top_img_container">
+                            <img src="/assets/icons/mic.svg" alt="">
+                        </div>
+                        <span>
+                            <span class="moderateur">
+                                Modérateur </span>
+
+                            · La parole est à Yasmine. Demandez le micro pour intervenir.</span>
+                    </div>
+                    <div class="line"></div>
+                    <div class="comment_section_bottom_container">
+                        <div class="comment_section_bottom">
+                            <span class="user_profile">Y</span>
+                            <div class="comments_container">
+                                <div class="comments_info">
+                                    <div class="name">Yasmine</div>
+                                    <div class="hour">20:11</div>
+                                </div>
+                                <div class="comments">L'IA va transformer le métier mais pas le remplacer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer_line"></div>
+            <div class="footer_text">
+                <span class="user_profile">T</span>
+                <textarea name="commentInput" id="commentInput" placeholder="Réagissez..."></textarea>
+                <div class="publish_btn_container">
+                    <img src="/assets/icons/mic.svg" alt="">
+                    <button class="publish_btn">Parole</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="/src/js/liveDayInfoPage.ts" type="module"></script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KINO</title>
+    <link rel="stylesheet" href="/css/loginPage.css">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div class="header_container">
+                <span class="back_btn"> ← Retour </span>
+                <span class="header_text"> Créer un compte </span>
+            </div>
+            <div class="header_line"></div>
+        </header>
+        <main>
+            <div class="email_container">
+                <label for="email">E-MAIL</label>
+                <input type="email" name="email" id="email" placeholder="tonemail@gmail.com">
+                <span id="emailErrorMsg" class="errorMsg"></span>
+            </div>
+        </main>
+        <footer>
+            <div class="footer_line"></div>
+            <button class="receive_code">
+                <img src="/assets/icons/phone.svg" alt="">
+                <span> Recevoir le code de vérification</span>
+            </button>
+        </footer>
+    </div>
+</body>
+<script src="/src/js/loginPage.ts" type="module"></script>
+
+</html>

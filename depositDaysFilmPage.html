@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/depositDaysFilmPage.css">
+</head>
+
+<body>
+    <div id="container">
+        <span class="snackbar"></span>
+       
+        <header>
+            <div class="header_text">
+                <span class="back_btn">← Retour</span>
+                <span class="title">Films déposés</span>
+                <span class="date">Lun → Mer</span>
+            </div>
+            <div class="header_line"></div>
+        </header>
+
+        <main>
+            <div class="program_container">
+
+            </div>
+            <div class="deposit_btn">
+                <span>+</span>
+                <span class="deposit_btn_text">Déposer votre film</span>
+            </div>
+            <div class="category_propositions_container">
+                <!-- <div class="upload_films"> 
+                    <img src="/assets/icons/camera.svg" alt="" class="upload_films_pictures">
+                    <div class="upload_films_description">
+                        <span class="film_title">Black Panther : Wakanda Forever</span>
+                        <span class="film_director">Ryan Cooper · 2022 · VF</span>
+                        <span class="film_pitch">"fun"</span>
+                        <span class="film_user">par toi</span>
+                        <button class="updatefilm_btn">Modifier mon film</button>
+                    </div>
+                </div> -->
+            </div>
+            <div class="depositfilm_modal_background">
+                <div class="depositfilm_modal_container">
+                    <div class="depositfilm_modal_line"></div>
+                    <span class="depositfilm_modal_title">Déposer un film</span>
+                    <div class="depositfilm_modal">
+                        <div class="input_container">
+                            <label for="title">TITRE</label>
+                            <input type="text" name="title" id="title" class="deposit_input"
+                                placeholder="Tape un titre — les suggestions arrivent">
+                            <div class="films_suggestions">
+
+                            </div>
+                        </div>
+                        <div class="input_container">
+                            <label for="director">RÉALISATEUR / ACTEUR PRINCIPAL</label>
+                            <input type="text" name="director" id="director" class="deposit_input"
+                                placeholder="Réalisateur ou acteur principal">
+                        </div>
+                        <div class="input_container">
+                            <label for="release_year">ANNÉE DE SORTIE</label>
+                            <input type="text" name="release_year" id="release_year" class="deposit_input"
+                                placeholder="2024">
+                        </div>
+                        <div class="input_container">
+                            <span>VERSION (OPTIONNEL)</span>
+                            <div class="version_btn">
+                                <button class="vf">VF</button>
+                                <button class="vostfr">VOSTFR</button>
+                            </div>
+                        </div>
+                        <div class="input_container"> 
+                            <span>AFFICHE (OPTIONNEL)</span>
+                            <input type="file" name="poster" id="poster" accept="image/*" />
+                            <label for="poster" class="poster_label">
+                                <div class="poster_icon">
+                                    <div class="poster_background">
+                                        <img src="/assets/icons/upload.svg" class="poster_preview" alt="" />
+                                    </div>
+                                    <span>Ajouter l'affiche du film (optionnel)</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="input_container">
+                            <label for="">POURQUOI CE FILM (OPTIONNEL) </label>
+                            <textarea name="" id="opinion" placeholder="Ce film m'a marqué parce que..."></textarea>
+                        </div>
+                    </div>
+                    <button class="upload_btn">Déposer</button>
+                </div>
+            </div>
+            <!-- <div class="themes_registered">
+                <span class="themes">FILMS PROPOSÉS ·</span>
+                <span class="number">4</span>
+            </div> -->
+            <!-- <div class="category_propositions_container">
+               <span class="no_proposition">Aucun film déposé cette semaine — sois le premier !</span> 
+            </div> -->
+        </main>
+        <footer>
+            <!-- <div class="category">
+                <img src="/assets/icons/film.svg" alt="">
+                <span>Film</span>
+            </div>
+            <div class="category">
+                <img src="/assets/icons/laptop.svg" alt="">
+                <span>Info</span>
+            </div>
+            <div class="category">
+                <img src="/assets/icons/heart.svg" alt="">
+                <span>Love</span>
+            </div>
+            <div class="category">
+                <img src="/assets/icons/music_grey.svg" alt="">
+                <span>Musique</span>
+            </div> -->
+        </footer>
+    </div>
+</body>
+<script src="/src/js/depositDaysFilmPage.ts" type="module"></script>
+
+</html>

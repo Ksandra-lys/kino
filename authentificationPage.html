@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/authenficationPage.css">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div class="header_container">
+                <span class="back_btn"> ← Retour </span>
+                <span class="header_text"> Vérification </span>
+            </div>
+            <div class="header_line"></div>
+        </header>
+        <main>
+            <img src="/assets/icons/lock.svg" alt="">
+            <span class="main_title">Code de vérification</span>
+            <div class="main_description">
+                <span>Entrez le code à 6 chiffres
+
+                </span> 
+                <span>
+                    envoyé à l'adresse mail <span class="number"></span>
+                </span> 
+            </div>
+            <div class="verification_code_container">
+                <input type="text" maxlength="1" inputmode="numeric" placeholder="_" class="verification_code" required>
+                <input type="text" maxlength="1" inputmode="numeric" placeholder="_" class="verification_code" required>
+                <input type="text" maxlength="1" inputmode="numeric" placeholder="_" class="verification_code" required>
+                <input type="text" maxlength="1" inputmode="numeric" placeholder="_" class="verification_code" required>
+                <input type="text" maxlength="1" inputmode="numeric" placeholder="_" class="verification_code" required>
+                <input type="text" maxlength="1" inputmode="numeric" placeholder="_" class="verification_code" required>
+            </div>
+            <span class="resend">Renvoyer le code</span>
+        </main>
+        <footer>
+            <div class="footer_line"></div>
+            <button class="receive_code">
+                <span>✓ Confirmer et accéder</span>
+            </button>
+        </footer>
+    </div>
+</body>
+<script src="/src/js/authentificationPage.ts" type="module"></script>
+</html>

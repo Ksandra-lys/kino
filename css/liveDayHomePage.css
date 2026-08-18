@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-family: "DM Sans", sans-serif;
+}
+
+#container {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 500px;
+    background-color: #f2f2f7;
+
+}
+
+/******DEBUT DU HEADER******/
+.header_container {
+    background-color: #140e1e;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 50px;
+    padding-bottom: 13px;
+}
+
+.greetings {
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.header_leftside {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    color: #5c5a60;
+}
+
+.username_container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.username {
+    color: white;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.username_container img {
+    transform: rotate(270deg);
+    width: 25px;
+    height: 25px;
+}
+
+.header_rightside {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.app_name {
+    color: white;
+    background-color: #e11d48;
+    border-radius: 10px;
+    width: 70px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+}
+
+.user_picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.profile_picture_icon {
+    background-color: #29102a;
+    border: dashed 2px #851739;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#photo {
+    display: none;
+}
+
+#preview {
+    width: 20px;
+    height: 20px;
+}
+
+.dropdown_menu{
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 20px;
+    top: 105px;
+    transform: translateX(-150px);
+    width: 275px;
+    padding: 15px 20px;
+}
+.dropdown_menu.active{
+    display: flex;
+}
+.dropdown_menu_header{
+    display: flex;
+    gap: 10px;
+}
+.dropdown_menu_header .user_information{
+    display: flex;
+    flex-direction: column;
+
+}
+.user_information .username{
+    color: black;
+    font-size: 16px;
+}
+.user_information .user_number{
+    color: #5c5a60;
+    font-size: 13px;
+}
+.dropdown_line{
+    width: 100%;
+    height: 2px;
+    background-color: #e8e2da
+}
+.dropdown_menu .edit_picture{
+    display: flex;
+    gap: 10px;
+    font-weight: 550;
+    cursor: pointer;
+}
+.edit_picture img{
+    width: 20px;
+    height: 20px;
+}
+.dropdown_menu .logout{ 
+    display: flex;
+    gap: 10px;
+    color: red;
+    font-weight: 550;
+    cursor: pointer;
+}
+.logout img{
+    width: 20px;
+    height: 20px;
+}
+
+/******FIN DU HEADER********/
+
+/*********DEBUT DU MAIN********/
+main{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.schedule_container {
+    background-color: #ffffff;
+}
+
+.schedule_line {
+    height: 1.5px;
+    width: 100%;
+    background-color: #e8e2da;
+}
+
+.schedule_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.schedule .date {
+    border: solid 1px #e8e2db;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    font-weight: bolder;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule .plan {
+    font-size: 10px;
+    color: #b5b0bb;
+    font-weight: bolder;
+}
+
+.main_background {
+    background-color: #f2f2f7;
+    padding-top: 0px;
+}
+
+.program_container {
+    background-color: #0f0c14;
+    display: flex;
+    border-radius: 20px;
+    margin: 15px;
+    margin-right: 15px;
+    padding: 16px;
+    justify-content: space-between;
+}
+
+.program_leftside {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.program_leftside_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.program_icon_background {
+    background-color: #1156b1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    width: 53px;
+    height: 53px;
+}
+
+.program {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.program_name_container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.circle {
+    width: 8px;
+    height: 8px;
+    background-color: #e11d48;
+    border-radius: 100%;
+}
+
+.program_name {
+    color: #e11d48;
+    font-weight: bold;
+    font-size: 11px;
+
+}
+
+.program_description {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.scenarist_container {
+    display: flex;
+    align-items: center;
+    color: #5f5d63;
+    font-size: 12px;
+    font-weight: bolder;
+    gap: 5px;
+
+}
+
+.loveIcon {
+    width: 10px;
+    height: 10px;
+    opacity: 0.6;
+}
+
+.category_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 12px;
+    column-gap: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-left: 15px;
+    gap: 9px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.category img {
+    width: 25px;
+    height: 25px;
+}
+
+.category span {
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+}
+
+.category_film {
+    background-color: #200a14;
+    border: solid 1px #610f28;
+}
+
+.film_line {
+    background-color: #390f1e;
+}
+
+.category_film .line_span {
+    color: #d01b43;
+}
+
+.category_info {
+    background-color: #0a1225;
+    border: solid 1px #152b55;
+}
+
+.info_line {
+    background-color: #162e61;
+}
+
+.category_info .line_span {
+    color: #3b82f6;
+}
+
+.category_love {
+    background-color: #200a14;
+    border: solid 1px #511834;
+}
+
+.love_line {
+    background-color: #531637;
+}
+
+.category_love .line_span {
+    color: #cc3d85;
+}
+
+.category_music {
+    background-color: #061612;
+    border: solid 1px #09573e;
+}
+
+.music_line {
+    background-color: #0b3d25;
+}
+
+.category_music .line_span {
+    color: #0fb37c;
+}
+
+.line {
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    gap: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.line_icon {
+    width: 15px !important;
+    height: 15px !important;
+}
+
+.line_span {
+    font-size: 10px !important;
+}
+
+/******DEBUT DU FOOTER*****/
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #290e2a;
+    padding: 10px 20px;
+    color: #9b97a0;
+}
+.footer_category{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    cursor: pointer;
+}
+.footer_category img{
+    width: 20px;
+    height: 20px;
+}
+.footer_category span{
+    font-weight: 600;
+    font-size: 12px;
+} 

@@ -1,0 +1,1 @@
+export let accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTc4NTk0MTA5OCwiZXhwIjoxNzg1OTQxOTk4fQ.dKqXVEwr_lXlMSJnhjbFMzuIwzR8IXU2NfJyCKPZRC8"

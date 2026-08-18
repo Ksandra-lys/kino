@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-family: "DM Sans", sans-serif; 
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a2a;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    height: 100dvh;
+    width: 480px;
+    margin: 0 auto;
+    background-color: #1a1a2a;
+}
+/******DEBUT HEADER*****/
+.cinema_icons {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 20px;
+    height: 15px;
+    border-radius: 1px;
+}
+
+.header_cinemaicons,
+.footer_cinema_icons {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    width: 200%;
+    height: 3vh;
+}
+
+.parent_header {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.header_cinemaicons {
+    animation: leftslide 5s linear infinite;
+
+}
+
+@keyframes leftslide {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/*****FIN DU HEADER*********/
+
+/********DEBUT DU MAIN******/
+main {
+    flex: 1;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shadow {
+    width: 80px;
+    height: 110px;
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(225, 0, 0, 0.25);
+    box-shadow: 0 0 40px rgba(225, 0, 0, 0.5), 0 0 80px rgba(225, 0, 0, 0.35), 0 0 120px rgba(225, 0, 0, 0.2);
+    filter: blur(20px);
+}
+
+/****DEBUT ANIMATION KINO*****/
+.app_name {
+    font-size: 75px;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    gap: 0px;
+}
+
+.app_name span {
+    animation: apparition 0.6s ease backwards;
+}
+
+.app_name span:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.app_name span:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.app_name span:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.app_name span:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: scale(0)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+/*****FIN ANIMATION KINO*****/
+
+/*****DEBUT ANIMATION LIGNE ROUGE*******/
+.red_line {
+    height: 4px;
+    margin-bottom: 10px;
+    opacity: 0;
+    width: 160px;
+    background: linear-gradient(to right,
+            transparent,
+            /* rgba(225, 0, 0, 0.5), */
+            rgba(201, 27, 67),
+            transparent);
+    border-radius: 50%;
+    animation: deploiement 0.8s forwards 1s;
+    transform-origin: center;
+
+}
+
+@keyframes deploiement {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/*****FIN ANIMATION LIGNE ROUGE*******/
+
+/******DEBUT ANIMATION DESCRIPTION***/
+.app_themes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    animation: slideup 1s ease 1.5s backwards;
+}
+
+@keyframes slideup {
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.circle {
+    height: 4px;
+    width: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+}
+
+/******FIN ANIMATION DESCRIPTION***/
+
+/***********FIN DU MAIN********/
+
+/******DEBUT DU FOOTER*******/
+
+.footer_parent {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.animation_reverse {
+    animation-direction: reverse;
+}
+
+@keyframes rightslide {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-40%);
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
+footer span {
+    padding-top: 25px; 
+    justify-self: center;
+    align-self: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/**********FIN DU FOOTER*******/

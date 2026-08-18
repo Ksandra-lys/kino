@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-family: "DM Sans", sans-serif;
+}
+
+#container {
+    height: 100dvh;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #0f0c14;
+    width: 500px;
+    margin: 0 auto;
+}
+
+/*****DEBUT DU HEADER****/
+.skip_btn {
+    background-color: #27242b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    justify-self: flex-end;
+    border-radius: 20px;
+    width: 80px;
+    height: 30px;
+    color: white;
+    opacity: 0.5;
+    font-size: 14px;
+    border: none;
+    font-family: "DM Sans", sans-serif;
+    cursor:pointer;
+}
+
+/*****FIN DU HEADER****/
+
+/*****DEBUT DU MAIN****/
+main {
+    width: 100%;
+    flex: 1;
+    margin-top: 13px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 12px;
+    column-gap: 12px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding-top: 23px;
+    padding-left: 15px;
+    gap: 9px;
+}
+
+.category img {
+    width: 32px;
+    height: 32px;
+}
+
+.category span {
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+}
+
+.category_film {
+    background-color: #200a14;
+    border: solid 1px #610f28;
+}
+
+.film_line {
+    background-color: #e11d48;
+}
+
+.category_info {
+    background-color: #0a1225;
+    border: solid 1px #152b55;
+}
+
+.info_line {
+    background-color: #3b82f6;
+}
+
+.category_love {
+    background-color: #200a14;
+    border: solid 1px #511834;
+}
+
+.love_line {
+    background-color: #ec4899;
+}
+
+.category_music {
+    background-color: #061612;
+    border: solid 1px #09573e;
+}
+
+.music_line {
+    background-color: #10b981;
+}
+
+.line {
+    width: 30px;
+    height: 3.6px;
+    border-radius: 5px;
+}
+
+/*****FIN DU MAIN****/
+
+/*****DEBUT DU FOOTER****/
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 2px;
+}
+
+.description_name {
+    color: #e11d48;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.description_name .circle {
+    height: 7px;
+    width: 7px;
+    background-color: #e11d48;
+    border-radius: 100%;
+}
+
+.description_name span {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.description_title {
+    font-size: 35px;
+    font-weight: bolder;
+    color: white;
+}
+
+.description_content {
+    color: #757378;
+    font-size: 15px;
+}
+
+.pagination_dots_container {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination_dot {
+    border-radius: 100%;
+    height: 5px;
+    width: 5px;
+    background-color: #3d4763;
+}
+
+.pagination_dot_categories.active {
+    background-color: #e11d48;
+    width: 20px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+footer button {
+    display: flex;
+    align-items: center;
+    background-color: #e11d48;
+    height: 50px;
+    width: 120px;
+    color: White;
+    gap: 5px;
+    font-family: "DM Sans", sans-serif;
+    border: none;
+    border-radius: 15px;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button img {
+    width: 8px;
+    height: 8px;
+    transform: rotate(180deg);
+}
+
+/*****FIN DU FOOTER****/

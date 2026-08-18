@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-family: "DM Sans", sans-serif;
+    background-color: #ffffff;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    height: 100dvh;
+    width: 500px;
+    margin: 0 auto;
+}
+
+
+/*******DEBUT DU HEADER*******/
+header {
+    display: flex;
+    background-color: black;
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    height: 10dvh;
+}
+
+header .back_btn {
+    color: #938f98;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+header .title {
+    font-weight: bolder;
+    color: white;
+}
+
+header .date {
+    color: #3b82f6;
+    background-color: #eff6ff;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 2px 10px;
+    display: flex;
+    align-items: center;
+}
+
+/*******FIN DU HEADER*********/
+
+/*********DEBUT DU MAIN******/
+main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.live_section_video {
+    width: 100%;
+    height: 230px;
+}
+
+.film_information {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+}
+
+.film_scenarist_name {
+    display: flex;
+    flex-direction: column;
+}
+
+.film_name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.scenarist_name {
+    color: #938f98;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.film_genre {
+    border-radius: 20px;
+    color: #e11d48;
+    background-color: #f9d2da;
+    font-weight: bolder;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    height: 20px;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #e8e2da;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comment_section {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.comment_section_top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.comment_section_top span:nth-child(1) {
+    color: #938f98;
+
+}
+
+.comment_section_top span:nth-child(2) {
+    color: #10b981;
+}
+
+.comment_section_bottom_container {
+    display: flex;
+    flex-direction: column;
+    height: 6vh;
+}
+
+.comment_section_bottom {
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+
+}
+
+.comments_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.comments_info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.comments_info .hour {
+    color: #938f98;
+    font-size: 12px;
+}
+
+.comments_info .name {
+    font-weight: bold;
+}
+
+.comments {
+    font-size: 15px;
+}
+
+/****FIN DU MAIN*****/
+
+/*****DEBUT DU FOOTER******/
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.footer_line {
+    background-color: #e8e2da;
+    height: 1px;
+    width: 100%;
+}
+
+.footer_text {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user_profile {
+    color: #e11d48;
+    background-color: #f9d2da;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+#commentInput {
+    background-color: #f2f2f7;
+    border-radius: 20px;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    padding-top: 10px;
+    outline: none;
+    overflow-y: auto;
+    resize: none;
+    scrollbar-width: none;
+} 
+
+#commentInput::placeholder {
+    font-size: 13px;
+    font-family: "DM Sans", sans-serif;
+}
+
+.publish_btn {
+    background-color: #e8e2da;
+    border-radius: 100%;
+    border: none;
+    color: white;
+    width: 45px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/******FIN DU FOOTER*****/
