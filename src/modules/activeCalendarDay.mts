@@ -6,8 +6,7 @@ export function activeCalendarDay() : void{
    
     const currentDay = today === 0 ? 6 : today - 1;
    
-   
-    const days = homepageCalendarData.map(data => data.day);
+    const days = homepageCalendarData.map(data => data.day); 
 
     
     const savedDay = sessionStorage.getItem("calendarDay");
@@ -20,18 +19,18 @@ export function activeCalendarDay() : void{
             schedule.classList.add("active");
         }
 
-        schedule.addEventListener("click", () => {
-            schedules.forEach(day => {
-                day.classList.remove("active");
-            });
+        // schedule.addEventListener("click", () => {
+        //     schedules.forEach(day => {
+        //         day.classList.remove("active");
+        //     });
 
-            schedule.classList.add("active");
+        //     schedule.classList.add("active");
 
-            sessionStorage.setItem(
-                "calendarDay",
-                days.find(day => schedule.classList.contains(day))!
-            );
-        });
+        //     sessionStorage.setItem(
+        //         "calendarDay",
+        //         days.find(day => schedule.classList.contains(day))!
+        //     );
+        // });
     });
 }
 

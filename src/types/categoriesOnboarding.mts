@@ -3,5 +3,5 @@ export type categoriesOnboarding = {
     img: string, 
     name: string, 
     classLine:string, 
-    status ?: "deposit" | "vote" | "revelation" | "live",
+    status ?: "deposit" | "vote" | "revelation" | "live" | "soon", 
 }  

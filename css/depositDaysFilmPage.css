@@ -11,6 +11,7 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     font-family: "DM Sans", sans-serif;
+    background-color: #f2f2f7
 }
 
 #container {
@@ -21,8 +22,16 @@ body {
     margin: 0 auto;
     width: 500px;
     position: relative;
+    box-shadow: 10px 5px 30px 20px rgba(0, 0, 0, 0.2), -10px -5px 30px 20px rgba(0, 0, 0, 0.2);
 }
-
+.loader{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;  
+}
 /****DEBUT DU HEADER****/
 header {
     display: flex;
@@ -77,6 +86,7 @@ main {
     display: flex;
     flex: 1;
     flex-direction: column;
+   
 }
 
 .program_container {
@@ -132,19 +142,16 @@ main {
     color: white;
     font-size: 15px;
     font-weight: bolder;
-    width: fit-content;
     box-shadow: 2px 2px 10px rgba(225, 29, 72, 0.5); 
     margin-top: 12px;
     border-radius: 15px; 
-    padding: 10px;
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 7px;
-    padding: 16px 50px;
+    padding: 16px;
     cursor: pointer;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 10px; 
     border: none;
 }
 .deposit_btn:disabled{
@@ -152,16 +159,14 @@ main {
     color: white;
     font-size: 15px;
     font-weight: bolder;
-    width: fit-content;
     box-shadow: 2px 2px 10px rgba(225, 29, 72, 0.5);
     margin-top: 12px;
     border-radius: 15px;
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 7px;
-    padding: 16px 50px;
+    padding: 16px;
     cursor: pointer;
     margin-left: 10px;
     margin-right: 10px;
@@ -169,6 +174,58 @@ main {
     opacity: 0.6;
     border: none;
 }
+.deposit_btn:active{
+    transform: scale(0.96);
+}
+.category_propositions_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    max-height: 359px;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+.offline_notice_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    padding-top: 50px;
+    font-size: 13px;
+    color: #7f737e;
+}
+.retry_btn{
+    border: none;
+    background-color: white;
+    width: fit-content;
+    border-radius: 9px;
+    padding: 8px 17px;
+    font-weight: 600;
+    cursor: pointer;
+    border: solid 1px #7f737e;
+    font-size: 12px;
+}
+.category_propositions_container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.category_propositions_container::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 10px;
+}
+
+.category_propositions_container::-webkit-scrollbar-thumb {
+    background: none;
+    border-radius: 10px;
+} 
+.no_proposition{
+    display: flex;
+    align-self: center;
+    color: #7f737e;
+}
+
 .upload_films_container{
     border: none;
     background-color: rgba(255, 255, 255, 0.8);
@@ -177,11 +234,36 @@ main {
     margin-top: 10px;
     border-radius: 10px;
     padding: 10px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.1); 
+    animation: slideup 0.4s ease-in-out backwards;
+}
+@keyframes slideup {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.upload_films_container:nth-child(1){
+    animation-delay: 0.1s;
+}
+.upload_films_container:nth-child(2){
+    animation-delay: 0.2s;
+}
+.upload_films_container:nth-child(3){
+    animation-delay: 0.3s;
+}
+.upload_films_container:nth-child(4){
+    animation-delay: 0.4s;
 }
 .upload_films{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    
 }
 .filmsandpicture{
     display: flex;
@@ -222,6 +304,25 @@ main {
     height: 23px;
     border-radius: 100%;
 }
+.trailer{
+  display: flex;
+  border: solid 1px #f2f2f7;
+  border-radius: 10px;
+  padding: 7px 11px;
+  align-items: center;
+  width: fit-content;
+  gap: 7px;
+  cursor: pointer;
+}
+.trailer img{
+    width: 12px;
+    height: 12px;
+}
+.trailer span{
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+}
 .updatefilm_btn{
     color: #e11d48;
     font-weight: 700;
@@ -245,17 +346,6 @@ main {
     padding-right: 10px;
 }
 
-.category_propositions_container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 10px;
-}
-.no_proposition{
-    display: flex;
-    align-self: center;
-    color: #7f737e;
-}
 .depositfilm_modal_background{
     width: 500px;
     height: 100dvh;
@@ -532,149 +622,3 @@ footer{
     font-weight: 600;
     font-size: 12px; 
 }
-
-
-
-.skeleton {
-    background: linear-gradient(
-        90deg,
-        #d1d1d1 25%,
-        #e2e2e2 50%,
-        #d1d1d1 75%
-    );
-    background-size: 200% 100%;
-    animation: skeletonloading 1.5s infinite;
-    border-radius: 8px;
-}
-
-@keyframes skeletonloading {
-    0% {
-        background-position: 200% 0;
-    }
-
-    100% {
-        background-position: -200% 0;
-    }
-}
-/******** HEADER ********/
-
-.skeleton_header {
-    background-color: #d1d1d1;
-}
-
-.skeleton_back {
-    width: 55px;
-    height: 13px;
-}
-
-.skeleton_title {
-    width: 105px;
-    height: 18px;
-}
-
-.skeleton_date {
-    width: 70px;
-    height: 22px;
-}
-
-
-/******** PROGRAM ********/
-
-/* .skeleton_program {
-    background-color: #d1d1d1;
-}
-
-.skeleton_program_icon {
-    width: 30px;
-    height: 30px;
-}
-
-.skeleton_program_name {
-    width: 170px;
-    height: 13px;
-}
-
-.skeleton_program_description {
-    width: 180px;
-    height: 12px;
-}
- */
-
-/******** BUTTON ********/
-
-/* .skeleton_deposit_btn {
-    height: 50px;
-    width: 250px;
-    margin: 12px 10px 0;
-    border-radius: 15px;
-} */
-
-
-/******** FILMS ********/
-
-/* .skeleton_films {
-    gap: 10px;
-    padding-top: 10px;
-}
-
-.skeleton_film {
-    background-color: #d1d1d1;
-}
-
-.skeleton_poster {
-    width: 60px;
-    height: 80px;
-}
-
-.skeleton_film_title {
-    width: 150px;
-    height: 16px;
-}
-
-.skeleton_film_director {
-    width: 110px;
-    height: 13px;
-}
-
-.skeleton_avatar {
-    width: 23px;
-    height: 23px;
-    border-radius: 50%;
-}
-
-.skeleton_user {
-    width: 75px;
-    height: 12px;
-}
-
-.skeleton_update_btn {
-    width: 80px;
-    height: 35px;
-    border-radius: 20px;
-}
- */
-
-/******** FOOTER ********/
-
-/* .skeleton_footer {
-    background-color: #d1d1d1;
-}
-
-.skeleton_footer_icon {
-    width: 20px;
-    height: 20px; 
-}
-
-.skeleton_footer_text {
-    width: 50px;
-    height: 12px;
-    margin-top: 4px;
-} */
-
-
-/* #container.loading {
-    background-color: #d3d3d3;
-}
-#container.loading .header_text {
-    background-color: #d3d3d3;
-} */

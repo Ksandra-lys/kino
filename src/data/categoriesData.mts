@@ -10,7 +10,8 @@ export const infoCategory = {
     category: "category_info",
     img: "/assets/icons/laptop.svg",
     name: "Informatique",
-    classLine: "info_line line"
+    classLine: "info_line line",
+    
 }
  
 export const loveCategory = {

@@ -8,11 +8,11 @@ import { homePageHeader } from "../components/homepageHeader.mts"
 import { toggleDropdownMenu } from "../helpers/toggleDropdownMenu.mts"
 import { categoryPageFooter } from "../components/categoryPageFooter.mts"
 import { safeFetchData } from "../helpers/safeFetch.mts"
-import { activeCalendarDay } from "../modules/activeCalendarDay.mts"
 import { editProfilePicture } from "../helpers/editProfilePicture.mts"
 import { homePageSkeleton } from "../components/homePageSkeleton.mts"
 import { showSnackbar } from "../helpers/showSnackBar.mts"
-document.addEventListener("DOMContentLoaded", async () => {
+import { activeCalendarDay } from "../modules/activeCalendarDay.mts"
+document.addEventListener("DOMContentLoaded", async () => { 
     homePageSkeleton()
 
     const snackbar = document.querySelector(".snackbar") as HTMLElement
@@ -26,21 +26,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         headerContainer.innerHTML = homePageHeader(userInfo.result.user);
         headerContainer.classList.remove("skeleton_header_container");
 
-    } catch (error) {
-        
-        // if (error instanceof Error) {
-        //     console.error(error.message)
-        // } else {
-        //     console.error(error)
-        // }
-        if (error instanceof Error) {
-                                console.error(error.message)
-                                
-                            } else {
-                                showSnackbar(error.message)
-                                snackbar.style.backgroundColor = "red"
-                            } 
-
+    } catch (error: any) {
+        showSnackbar(error.message)
+        snackbar.style.backgroundColor = "red" 
     }
 
     const scheduleText = document.querySelector(".schedule_text") as HTMLElement
@@ -60,18 +48,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     categoryContainer.innerHTML = onboardingCategoriesMain({
         ...filmCategory,
         status: "deposit"
+        
     }) +
         onboardingCategoriesMain({
             ...infoCategory,
-            status: "deposit"
+            status: "soon"
         }) +
         onboardingCategoriesMain({
             ...loveCategory,
-            status: "deposit"
+            status: "soon"
         }) +
         onboardingCategoriesMain({
             ...musicCategory,
-            status: "deposit"
+            status: "soon"
         })
 
     const footerContainer = document.querySelector("footer") as HTMLElement
@@ -80,19 +69,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const message = sessionStorage.getItem("snackbar");
     if (message) {
-        sessionStorage.removeItem("snackbar");  
+        sessionStorage.removeItem("snackbar");
     }
 
     pageRedirect("depositDaysFilmPage.html", ".category_film")
-    pageRedirect("depositDaysInfoPage.html", ".category_info")
-    pageRedirect("depositDaysInfoPage.html", ".footer_category_info")
+    //pageRedirect("depositDaysInfoPage.html", ".category_info")
+    //pageRedirect("depositDaysInfoPage.html", ".footer_category_info")
     pageRedirect("depositDaysFilmPage.html", ".footer_category_film")
-    pageRedirect("voteDayHomePage.html", ".Jeudi")
 
     const dropdownMenuContainer = document.querySelector(".dropdown_menu") as HTMLElement
     toggleDropdownMenu(".avatar_picture", dropdownMenuContainer)
 
-    pageRedirect("loginPage.html", ".logout") 
+    pageRedirect("loginPage.html", ".logout")
 
     editProfilePicture()
     const container = document.getElementById("container") as HTMLElement

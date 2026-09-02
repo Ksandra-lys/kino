@@ -4,7 +4,7 @@ import type { filmsDeposit } from "../types/filmsDeposited.mts"
 export function uploadedFilms(filmInfo: filmsDeposit, likeBtn?: string,isVoted?:boolean):string{
     return `<div class="upload_films_container">    
                 <div class="upload_films">
-                ${isVoted ? `<div class="choose_icon">
+                   ${isVoted ? `<div class="choose_icon">
                         <img src="/assets/icons/trophy.svg"> 
                         <span>Choisi</span>
                     </div>` : ""} 
@@ -20,10 +20,13 @@ export function uploadedFilms(filmInfo: filmsDeposit, likeBtn?: string,isVoted?:
                             </div>    
                             ${filmInfo.pitch ? `<span class="film_pitch">"${filmInfo.pitch}"</span>`:""}
                             <div class="film_user_container">
-                               
                                 ${filmInfo.mine ? `<span class="film_user">par toi</span>` :
                                 `<span class="film_user">par ${filmInfo.depositedBy}</span>`}
                             </div>
+                            <div class="trailer">
+                                <img src="/assets/icons/redplay.svg">
+                                <span>Bande-annonce</span>
+                            </div> 
                             ${filmInfo.canEdit ? `<button class="updatefilm_btn" data-film-id="${filmInfo.id}">Modifier mon film</button>`:""}
                         </div>
                     </div>    

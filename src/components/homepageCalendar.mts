@@ -4,6 +4,6 @@ export function homepageCalendar(data:homePageHeader) :string{
         <div class="schedule ${data.day}" data-day="${data.day}">
             <span class="date">${data.date}</span>
             <span class="plan">${data.plan}</span>
-        </div>
+        </div> 
         `
 }  

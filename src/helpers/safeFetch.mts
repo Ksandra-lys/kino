@@ -16,9 +16,8 @@ export async function safeFetchData(
             throw error;
         }
 
-        
-        // Si un refresh est déjà en cours,
-        // on attend celui-ci au lieu d'en lancer un autre.
+
+        // Si un refresh est déjà en cours, on attend celui-ci au lieu d'en lancer un autre.
         if (!refreshPromise) {
             refreshPromise = fetchData(
                 "api/auth/refresh",
@@ -38,8 +37,8 @@ export async function safeFetchData(
                     // Le refresh est terminé
                     refreshPromise = null;
                 });
-        } 
-        
+        }
+
 
         try {
 
@@ -53,9 +52,9 @@ export async function safeFetchData(
                 }
             );
 
-        } catch(error){
+        } catch (error) {
             throw error
         }
-        
+
     }
 }

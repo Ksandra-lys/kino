@@ -3,7 +3,7 @@ import type { categoriesOnboarding } from "../types/categoriesOnboarding.mts";
 
 export function onboardingCategoriesMain(data: categoriesOnboarding): string {
     const status = data.status ? categoriesStatus[data.status]:undefined;
-    return `<div class="${data.category} category">
+    return `<div class="${data.category} category"> 
                 <img src="${data.img}" alt="">
                 <span>${data.name}</span>
                 <div class="${data.classLine}">

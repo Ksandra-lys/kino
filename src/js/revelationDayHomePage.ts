@@ -14,6 +14,9 @@ import { editProfilePicture } from "../helpers/editProfilePicture.mts"
 import { homePageSkeleton } from "../components/homePageSkeleton.mts"
 document.addEventListener("DOMContentLoaded", async () => {
     homePageSkeleton()
+
+
+    const snackbar = document.querySelector(".snackbar") as HTMLElement
     try{
       const userInfo = await safeFetchData("api/auth/me", {
         method: "GET",
@@ -24,12 +27,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     headerContainer.innerHTML = homePageHeader(userInfo.result.user);
     headerContainer.classList.remove("skeleton_header_container");
 
-    } catch(error){
-        if(error instanceof Error){
-          console.error(error.message)
-        } else {
-            console.error(error)
-        }
+    } catch(error:any){
+        showSnackbar(error.message)
+        snackbar.style.backgroundColor="red"
        
     }
     
@@ -53,15 +53,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     }) +
         onboardingCategoriesMain({
             ...infoCategory,
-            status: "revelation"
+            status: "soon"
         }) +
         onboardingCategoriesMain({
             ...loveCategory,
-            status: "revelation"
+            status: "soon"
         }) +
         onboardingCategoriesMain({
             ...musicCategory,
-            status: "revelation"
+            status: "soon"
         })
 
 
@@ -75,10 +75,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     pageRedirect("revelationDayInfoPage.html", ".category_info")
     pageRedirect("revelationDayFilmPage.html", ".footer_category_film")
     pageRedirect("revelationDayInfoPage.html", ".footer_category_info")
-    pageRedirect("depositDaysHomePage.html", ".Lundi")
-    pageRedirect("revelationDayHomePage.html", ".Vendredi")
-    pageRedirect("voteDayHomePage.html", ".Jeudi")
-    pageRedirect("liveDayHomePage.html", ".Samedi")
+    // pageRedirect("depositDaysHomePage.html", ".Lundi")
+    // pageRedirect("revelationDayHomePage.html", ".Vendredi")
+    // pageRedirect("voteDayHomePage.html", ".Jeudi")
+    // pageRedirect("liveDayHomePage.html", ".Samedi")
 
     const dropdownMenuContainer = document.querySelector(".dropdown_menu") as HTMLElement
     toggleDropdownMenu(".avatar_picture", dropdownMenuContainer)

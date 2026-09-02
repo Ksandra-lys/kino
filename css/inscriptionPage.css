@@ -11,6 +11,7 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     font-family: "DM Sans", sans-serif;
+    background-color: #f2f2f7;
 }
 
 #container {
@@ -22,6 +23,7 @@ body {
     flex-direction: column;
     width: 500px;
     margin: 0 auto;
+    box-shadow: 10px 5px 30px 20px rgba(0, 0, 0, 0.2), -10px -5px 30px 20px rgba(0, 0, 0, 0.2);
 }
 
 /*****DEBUT DU HEADER****/
@@ -31,15 +33,16 @@ body {
     padding-right: 10px;
     padding-left: 10px;
     position: relative;
+    height: 20px;
 }
 
-.back_btn {
+/* .back_btn {
     color: #676070;
     justify-self: flex-start;
     font-size: 12px;
     font-weight: bolder;
     cursor: pointer;
-}
+} */
 
 .header_text {
     color: white;

@@ -15,6 +15,9 @@ import { homePageSkeleton } from "../components/homePageSkeleton.mts";
 document.addEventListener("DOMContentLoaded", async () => {
     homePageSkeleton();
 
+
+    const snackbar = document.querySelector(".snackbar") as HTMLElement
+
     try {
         const userInfo = await safeFetchData("api/auth/me", {
             method: "GET",
@@ -23,12 +26,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         const headerContainer = document.querySelector(".header_container") as HTMLElement;
         headerContainer.innerHTML = homePageHeader(userInfo.result.user);
         headerContainer.classList.remove("skeleton_header_container");
-    } catch (error) {
-        if(error instanceof Error){
-          console.error(error.message)
-        } else {
-            console.error(error)
-        }
+    } catch (error:any) {
+        showSnackbar(error.message)
+        snackbar.style.backgroundColor="red"
     }
 
     const scheduleText = document.querySelector(".schedule_text") as HTMLElement;
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const programContainer = document.querySelector(".program_container",) as HTMLElement;
     programContainer.innerHTML = depositProgram({
-        programIcon: "/assets/icons/love.svg",
+        programIcon: "/assets/icons/love.svg", 
         programName: "JOUR DE VOTE",
         programDescription: "Votez pour votre thème préféré",
     });
@@ -55,15 +55,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }) +
         onboardingCategoriesMain({
             ...infoCategory,
-            status: "vote",
+            status: "soon",
         }) +
         onboardingCategoriesMain({
             ...loveCategory,
-            status: "vote",
+            status: "soon",
         }) +
         onboardingCategoriesMain({
             ...musicCategory,
-            status: "vote",
+            status: "soon",
         });
 
     const message = sessionStorage.getItem("snackbar");
@@ -76,9 +76,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     pageRedirect("voteDayInfoPage.html", ".category_info");
     pageRedirect("voteDayInfoPage.html", ".footer_category_info");
     pageRedirect("voteDayFilmPage.html", ".footer_category_film");
-    pageRedirect("depositDaysHomePage.html", ".Lundi");
-    pageRedirect("revelationDayHomePage.html", ".Vendredi");
-    pageRedirect("depositDaysHomePage.html", ".Mercredi");
+    // pageRedirect("depositDaysHomePage.html", ".Lundi");
+    // pageRedirect("revelationDayHomePage.html", ".Vendredi");
+    // pageRedirect("depositDaysHomePage.html", ".Mercredi");
 
     pageRedirect("loginPage.html", ".logout span");
     const dropdownMenuContainer = document.querySelector(".dropdown_menu") as HTMLElement;

@@ -7,7 +7,7 @@ export function homePageHeader(user:userInfo):string {
                     <div class="username_container">
                         <span class="username">${user.name}</span>
                         <img src="/assets/icons/hand-wave.svg" alt="">
-                    </div> 
+                    </div>  
                 </div>    
                 <div class="header_rightside">
                     <span class="app_name">KINO</span> 
@@ -26,10 +26,10 @@ export function homePageHeader(user:userInfo):string {
                     </div>` : `<div class="noAvatar_background">
                         <span class="noAvatar">${user.name[0]}</span> 
                     </div>`}
-                    </div>  
+                    </div>   
                             <div class="user_information">
                                 <span class="username">${user.name}</span>
-                                <span class="user_number">${user.phone}</span>
+                                <span class="user_number">${user.phone.slice(0,5)}${"•".repeat(user.phone.length - 7)}${user.phone.slice(-2)}</span>
                             </div>
                         </div>
                         <div class="dropdown_line"></div>

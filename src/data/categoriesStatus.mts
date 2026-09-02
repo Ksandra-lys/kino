@@ -1,7 +1,7 @@
 export const categoriesStatus = {
     deposit : {
         lineIcon : "/assets/icons/download.svg",
-        lineSpan : "Dépôt ouvert"
+        lineSpan : "Dépôt ouvert" 
     },
 
     vote: {
@@ -17,5 +17,10 @@ export const categoriesStatus = {
     live:{
         lineIcon : "/assets/icons/circle.svg",
         lineSpan : "Live"
+    },
+
+    soon: {
+        lineIcon : "",
+        lineSpan : "Bientôt"
     }
 } 

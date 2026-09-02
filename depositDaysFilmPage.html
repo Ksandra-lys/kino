@@ -9,17 +9,22 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#007bff">
 </head>
- 
+
 <body>
+    
     <div id="container">
-        <span class="snackbar">  
-            
+        <div class="loader">
+            Chargement en cours...
+        </div>
+        
+        <span class="snackbar">
+
         </span>
-       
+
         <header>
             <div class="header_text">
                 <span class="back_btn">← Retour</span>
-                <span class="title">Films déposés</span> 
+                <span class="title">Films déposés</span>
                 <span class="date">Lun → Mer</span>
             </div>
             <div class="header_line"></div>
@@ -30,13 +35,13 @@
 
             </div>
             <button class="deposit_btn">
-                <span>+</span>  
+                <span>+</span>
                 <span class="deposit_btn_text">Déposer votre film</span>
             </button>
             <div class="category_propositions_container">
-               
+
             </div>
-            <div class="depositfilm_modal_background"> 
+            <div class="depositfilm_modal_background">
                 <div class="depositfilm_modal_container">
                     <div class="depositfilm_modal_line"></div>
                     <span class="depositfilm_modal_title">Déposer un film</span>
@@ -44,7 +49,7 @@
                         <div class="input_container">
                             <label for="title">TITRE</label>
                             <input type="text" name="title" id="title" class="deposit_input"
-                            placeholder="Tape un titre — les suggestions arrivent">
+                                placeholder="Tape un titre — les suggestions arrivent">
                             <div class="films_suggestions">
 
                             </div>
@@ -66,7 +71,7 @@
                                 <button class="vostfr">VOSTFR</button>
                             </div>
                         </div>
-                        <div class="input_container"> 
+                        <div class="input_container">
                             <span>AFFICHE (OPTIONNEL)</span>
                             <input type="file" name="poster" id="poster" accept="image/*" />
                             <label for="poster" class="poster_label">
@@ -96,7 +101,7 @@
             </div> -->
         </main>
         <footer>
-            
+
         </footer>
     </div>
 </body>

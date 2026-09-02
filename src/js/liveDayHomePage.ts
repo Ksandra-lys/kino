@@ -24,12 +24,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         headerContainer.innerHTML = homePageHeader(userInfo.result.user);
         headerContainer.classList.remove("skeleton_header_container");
 
-    } catch (error) {
-        if(error instanceof Error){
-          console.error(error.message)
-        } else {
-            console.error(error)
-        }
+    } catch (error:any) {
+       showSnackbar(error.message),
+       (document.querySelector(".snackbar") as HTMLElement).style.backgroundColor="red"
        
     }
 
@@ -56,15 +53,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     }) +
         onboardingCategoriesMain({
             ...infoCategory,
-            status: "live"
+            status: "soon"
         }) +
         onboardingCategoriesMain({
             ...loveCategory,
-            status: "live"
+            status: "soon"
         }) +
         onboardingCategoriesMain({
             ...musicCategory,
-            status: "live"
+            status: "soon"
         })
 
 
@@ -78,9 +75,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     pageRedirect("liveDayFilmPage.html", ".category_film")
     pageRedirect("liveDayInfoPage.html", ".footer_category_info")
     pageRedirect("liveDayFilmPage.html", ".footer_category_film")
-    pageRedirect("depositDaysHomePage.html", ".Lundi")
-    pageRedirect("revelationDayHomePage.html", ".Vendredi")
-    pageRedirect("voteDayHomePage.html", ".Jeudi")
+    // pageRedirect("depositDaysHomePage.html", ".Lundi")
+    // pageRedirect("revelationDayHomePage.html", ".Vendredi")
+    // pageRedirect("voteDayHomePage.html", ".Jeudi")
 
 
     const dropdownMenuContainer = document.querySelector(".dropdown_menu") as HTMLElement
