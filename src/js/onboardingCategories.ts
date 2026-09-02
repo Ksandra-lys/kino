@@ -4,6 +4,13 @@ import { onboardingCategoriesMain } from "../components/categoriesOnboarding1.mt
 import { onboardingFooter } from "../components/onboardingFooter.mjs"
 import { filmCategory,infoCategory,loveCategory,musicCategory } from "../data/categoriesData.mts"
 document.addEventListener("DOMContentLoaded", () => {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((reg) => console.log('Service Worker enregistré !', reg.scope))
+        .catch((err) => console.error('Erreur :', err));
+    });
+  }
   pageRedirect("inscriptionPage.html", ".skip_btn")
   
   const categoriesContainer = document.querySelector(".categories") as HTMLElement

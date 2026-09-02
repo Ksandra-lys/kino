@@ -1,4 +1,4 @@
-export function openAndCloseModal(openModalBtn:string, modal:HTMLElement, closeModalBtn: string){
+export function openAndCloseModal(openModalBtn:string, modal:HTMLElement, closeModalBtn: string):void{
     document.addEventListener("click", (e) => {
         const target = e.target as HTMLElement
         if (target.closest(openModalBtn)) {

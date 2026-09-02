@@ -6,7 +6,7 @@
 
 html,
 body {
-    margin: 0;
+    margin: 0; 
     padding: 0; 
     font-optical-sizing: auto;
     font-style: normal;
@@ -133,6 +133,26 @@ main {
     font-size: 15px;
     font-weight: bolder;
     width: fit-content;
+    box-shadow: 2px 2px 10px rgba(225, 29, 72, 0.5); 
+    margin-top: 12px;
+    border-radius: 15px; 
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 16px 50px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+}
+.deposit_btn:disabled{
+    background-color: #e11d48;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    width: fit-content;
     box-shadow: 2px 2px 10px rgba(225, 29, 72, 0.5);
     margin-top: 12px;
     border-radius: 15px;
@@ -145,24 +165,27 @@ main {
     cursor: pointer;
     margin-left: 10px;
     margin-right: 10px;
-}
-.deposit_btn.active{
     cursor: not-allowed;
     opacity: 0.6;
+    border: none;
 }
 .upload_films_container{
+    border: none;
     background-color: rgba(255, 255, 255, 0.8);
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
     border-radius: 10px;
     padding: 10px;
-    /* display: none; */
 }
 .upload_films{
     display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.filmsandpicture{
+    display: flex;
     gap: 20px;
-    align-items: flex-start;
 }
 .upload_films_description{
     display: flex;
@@ -173,7 +196,7 @@ main {
 }
 .upload_films_description .film_title{
     color: black;
-    font-weight: 600;
+    font-weight: 600; 
     font-size: 16px;
 }
 .upload_films_description .film_user{
@@ -190,7 +213,15 @@ main {
 .film_director_container{
     font-weight: 430;
 }
-
+.film_user_container{
+    display: flex;
+    gap: 10px;
+}
+.avatar_background img{
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+}
 .updatefilm_btn{
     color: #e11d48;
     font-weight: 700;
@@ -202,7 +233,9 @@ main {
     width: 170px;
     cursor: pointer;
 }
-
+.updatefilm_btn:hover{
+    background-color: rgba(225, 29, 72, 0.1);
+}
 .themes_registered {
     padding-top: 10px;
     color: #9b97a0;
@@ -217,78 +250,12 @@ main {
     flex-direction: column;
     gap: 10px;
     padding-top: 10px;
-    /* display: none; */
-}
-
-/* .category_proposition {
-    display: flex;
-    border-radius: 10px;
-    height: 15vh;
-}
-
-.category_proposition img {
-    width: 30px;
-    height: 30px;
-    opacity: 0.8;
-
-}
-
-.category_icon_background {
-    background-color: #135db7;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 25px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    display: flex;
-    align-items: center;
-}
-
-.proposition {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    width: 100%;
-    color: #9b97a0;
-    font-size: 14px;
-    padding-left: 10px;
-    gap: 3px;
-}
-
-.category_name {
-    font-weight: bolder;
-    color: black;
-}
-
-.proposition .comment {
-    font-style: italic;
-}
-
-.proposition_user {
-    display: flex;
-    gap: 5px;
-}
-
-.proposition_user_photo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #cff1e6;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    color: #34c494;
-    font-size: 10px;
 }
 .no_proposition{
-    color: #7f737e;
     display: flex;
-    justify-self: center;
     align-self: center;
-} */
+    color: #7f737e;
+}
 .depositfilm_modal_background{
     width: 500px;
     height: 100dvh;
@@ -298,6 +265,14 @@ main {
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(2px);
+    
+}
+@keyframes slideUp{
+    from{
+        height: 500px;
+    } to{
+        height: 552px;
+    }
 }
 .depositfilm_modal_container{
     background-color: black;
@@ -314,10 +289,11 @@ main {
     height: 552px;
     overflow-y: scroll; 
     bottom: 0; 
+    animation: slideUp 0.3s ease-in-out;
 }
 
 .depositfilm_modal_line{
-    height: 3px;
+    height: 3px; 
     border-radius: 10px;
     width: 40px;
     background-color: #7f737e;
@@ -403,6 +379,11 @@ main {
 #poster{
     display: none;
 }
+.posterErrorMsg{
+    font-size: 13px;
+    font-weight: bolder;
+    color: #851739;
+}
 .films_suggestions{
     display: flex;
     flex-direction: column;
@@ -425,6 +406,10 @@ main {
     justify-content: space-between;
     padding: 25px;
     cursor: pointer;
+
+}
+.film_option:hover{
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .filmoption_rightside{
     display: flex;
@@ -440,11 +425,9 @@ main {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    
 }
 
 .version_btn button{
-    /* background-color: #413039; */
     background-color: #2a2037;
     color: #ffffff;
     border: none;
@@ -464,7 +447,6 @@ main {
     border:solid 1px red;
 }
 .input_container textarea{
-    /* background-color: #413039; */
     color: #A29AA0;
     outline: none;
     border: none;
@@ -499,7 +481,7 @@ main {
     border-radius: 10px;
     padding: 15px;
     margin-top: 15px; 
-    font-weight: bold;
+    font-weight: bold; 
     font-size: 15px;
     cursor: not-allowed;
     opacity: 0.6;
@@ -508,7 +490,7 @@ main {
 .snackbar {
     position: fixed;
     left: 50%;
-    top: 50px;
+    top: 100px;
     padding: 12px 20px;
     border-radius: 8px;
     background-color: #34c494;
@@ -518,10 +500,11 @@ main {
     transform: translate(-50%, 0);
     transition: transform 0.3s ease;   
     visibility: hidden; 
+    text-align: center;
 }
 
 .snackbar.active {
-    display: flex;
+    display: flex;  
     opacity: 1;
     transform: translate(-50%, 10px);
     visibility: visible;
@@ -549,3 +532,149 @@ footer{
     font-weight: 600;
     font-size: 12px; 
 }
+
+
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #d1d1d1 25%,
+        #e2e2e2 50%,
+        #d1d1d1 75%
+    );
+    background-size: 200% 100%;
+    animation: skeletonloading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeletonloading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+/******** HEADER ********/
+
+.skeleton_header {
+    background-color: #d1d1d1;
+}
+
+.skeleton_back {
+    width: 55px;
+    height: 13px;
+}
+
+.skeleton_title {
+    width: 105px;
+    height: 18px;
+}
+
+.skeleton_date {
+    width: 70px;
+    height: 22px;
+}
+
+
+/******** PROGRAM ********/
+
+/* .skeleton_program {
+    background-color: #d1d1d1;
+}
+
+.skeleton_program_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.skeleton_program_name {
+    width: 170px;
+    height: 13px;
+}
+
+.skeleton_program_description {
+    width: 180px;
+    height: 12px;
+}
+ */
+
+/******** BUTTON ********/
+
+/* .skeleton_deposit_btn {
+    height: 50px;
+    width: 250px;
+    margin: 12px 10px 0;
+    border-radius: 15px;
+} */
+
+
+/******** FILMS ********/
+
+/* .skeleton_films {
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.skeleton_film {
+    background-color: #d1d1d1;
+}
+
+.skeleton_poster {
+    width: 60px;
+    height: 80px;
+}
+
+.skeleton_film_title {
+    width: 150px;
+    height: 16px;
+}
+
+.skeleton_film_director {
+    width: 110px;
+    height: 13px;
+}
+
+.skeleton_avatar {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+}
+
+.skeleton_user {
+    width: 75px;
+    height: 12px;
+}
+
+.skeleton_update_btn {
+    width: 80px;
+    height: 35px;
+    border-radius: 20px;
+}
+ */
+
+/******** FOOTER ********/
+
+/* .skeleton_footer {
+    background-color: #d1d1d1;
+}
+
+.skeleton_footer_icon {
+    width: 20px;
+    height: 20px; 
+}
+
+.skeleton_footer_text {
+    width: 50px;
+    height: 12px;
+    margin-top: 4px;
+} */
+
+
+/* #container.loading {
+    background-color: #d3d3d3;
+}
+#container.loading .header_text {
+    background-color: #d3d3d3;
+} */

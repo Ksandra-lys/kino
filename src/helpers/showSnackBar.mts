@@ -1,4 +1,4 @@
-export function showSnackbar(message: string) {
+export function showSnackbar(message: string) : void{
     const snackbar = document.querySelector(".snackbar") as HTMLElement;
     
     snackbar.textContent = message;
@@ -6,5 +6,5 @@ export function showSnackbar(message: string) {
 
     setTimeout(() => {
         snackbar.classList.remove("active");
-    }, 3000);
+    }, 3000);  
 }

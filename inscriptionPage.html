@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/inscriptionPage.css" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#007bff">
 </head>
 
 <body>
     <div id="container"> 
+        <span class="snackbar">
+            
+        </span>
         <header>
             <div class="header_container">
-                <span class="back_btn"> ← Retour </span>
+                <!-- <span class="back_btn"> ← Retour </span> -->
                 <span class="header_text"> Créer un compte </span>
             </div>
             <div class="header_line"></div>
@@ -23,27 +28,27 @@
                 <label for="photo">
                     <div class="profile_picture_icon">
                         <img src="/assets/icons/camera.svg" id="preview" alt="" />
-                    </div> 
+                    </div>  
                 </label>
                 <span>Photo de profil</span>
             </div>
             <form class="inscription_form" method="get">
                 <div class="firstname_container">
                     <label for="firstName">PRÉNOM</label>
-                    <input type="text" name="firstName" id="firstName" placeholder="Votre prénom" />
+                    <input type="text" name="firstName" id="firstName" placeholder="Votre prénom" class="input"/>
                     <span id="firstNameErrorMsg" class="errorMsg"></span>
                 </div>
                 <div class="email_container">
                     <label for="email">E-MAIL</label>
-                    <input type="email" name="email" id="email" placeholder="tonemail@gmail.com">
+                    <input type="email" name="email" id="email" placeholder="tonemail@gmail.com" class="input">
                     <span id="emailErrorMsg" class="errorMsg"></span>
                 </div> 
                 <div class="phone_container">
                     <label for="phone">TÉLÉPHONE</label>
-                    <input type="tel" name="phone" id="phone" placeholder="6 99 98 26 25" />
+                    <input type="tel" name="phone" id="phone" placeholder="6 99 98 26 25" class="input"/>
                     <span id="phoneErrorMsg" class="errorMsg"></span>
                 </div>
-            </form>
+            </form> 
             <span class="terms_of_use">
                 En continuant vous acceptez les conditions d'utilisation.
             </span> 

@@ -32,7 +32,7 @@ header {
     justify-content: space-between;
     align-items: center; 
     padding-bottom: 12px;
-}
+} 
 
 header .back_btn {
     color: #938f98;
@@ -59,6 +59,11 @@ header .date {
 /*******FIN DU HEADER*********/
 
 /*********DEBUT DU MAIN******/
+main{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 .program_container {
     background-color: #0b1836;
     display: flex;
@@ -89,7 +94,47 @@ header .date {
     font-size: 13px;
     font-weight: 600;
 }
+.numberOfVoters_container{
+    display: flex;
+    align-self: center;
+    background-color: #e11d48;
+    width: fit-content;
+    justify-self: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.numberOfVoters_container span{
+    color: white;
+    font-weight: bold;
+}
+/* .voters{
 
+} */
+.choose_icon{
+    display: flex;
+    background-color: #fef3c7;
+    border-radius: 20px;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+   
+}
+.choose_icon img{
+    width: 12px;
+    height: 12px;
+}
+.choose_icon span{
+    font-size: 11px;
+    color: #b45309;
+    font-weight: 600;
+}
 .category_propositions_container {
     display: flex;
     flex-direction: column;
@@ -106,11 +151,17 @@ header .date {
     margin-top: 10px;
     border-radius: 10px;
     padding: 10px;
-    /* display: none; */
 }
+
 .upload_films{
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+}
+.filmsandpicture{
+    display: flex;
+    gap: 18px;
     align-items: flex-start;
 }
 .upload_films_description{
@@ -139,7 +190,15 @@ header .date {
 .film_director_container{
     font-weight: 430;
 }
-
+.film_user_container{
+    display: flex;
+    gap: 10px;
+}
+.avatar_background img{
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+}
 .updatefilm_btn{
     color: #e11d48;
     font-weight: 700;
@@ -152,18 +211,62 @@ header .date {
     cursor: pointer;
 }
 
-/* .like_btn{
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    padding: 5px;
-    gap: 5px;
-    cursor: pointer;
-}*/
-
 .like_btn {
     background-color: #fff0f3;
-    
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
 } 
+.like_icon{
+    width: 25px;
+    height: 25px;
+}
+.snackbar {
+    position: fixed;
+    left: 50%;
+    top: 50px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: #34c494;
+    color: white;
+    width: fit-content;
+    opacity: 0;
+    transform: translate(-50%, 0);
+    transition: transform 0.3s ease;   
+    visibility: hidden; 
+    text-align: center;
+}
+
+.snackbar.active {
+    display: flex;
+    opacity: 1;
+    transform: translate(-50%, 10px);
+    visibility: visible;
+}
+/**********FIN DU MAIN********/
+/*****DEBUT DU FOOTER*********/
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #290e2a;
+    padding: 8px 20px;
+    color: #9b97a0;
+}
+.footer_category{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.footer_category img{
+    width: 20px;
+    height: 20px;
+}
+.footer_category span{
+    font-weight: 600;
+    font-size: 12px; 
+}
 
 

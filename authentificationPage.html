@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/authenficationPage.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#007bff">
 </head>
 
 <body>
     <div id="container">
+        <span class="snackbar">
+
+        </span>
         <header>
             <div class="header_container">
                 <span class="back_btn"> ← Retour </span>
@@ -17,6 +22,7 @@
             <div class="header_line"></div>
         </header>
         <main>
+
             <img src="/assets/icons/lock.svg" alt="">
             <span class="main_title">Code de vérification</span>
             <div class="main_description">
@@ -35,6 +41,7 @@
                 <input type="text" maxlength="1" inputmode="numeric" placeholder="_" class="verification_code" required>
                 <input type="text" maxlength="1" inputmode="numeric" placeholder="_" class="verification_code" required>
             </div>
+            <span class="otp_error_msg"></span>
             <span class="resend">Renvoyer le code</span>
         </main>
         <footer>

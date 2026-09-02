@@ -81,7 +81,9 @@ body {
     justify-content: center;
     font-weight: bolder;
 }
-
+.avatarInput{
+    display: none;
+}
 .avatar_picture{
     cursor: pointer;
 }
@@ -137,6 +139,12 @@ body {
 .edit_picture img{
     width: 20px;
     height: 20px;
+}
+.edit_picture input{
+    display: none;
+}
+.edit_picture label{
+    cursor: pointer;
 }
 .dropdown_menu .logout{ 
     display: flex;
@@ -203,7 +211,13 @@ main{
     color: #b5b0bb;
     font-weight: bolder;
 }
-
+.schedule.active .date{
+    background-color: #e11d48;
+    color: white;
+}
+.schedule.active .plan{
+    color: #e11d48;
+}
 .main_background {
     background-color: #f2f2f7;
     padding-top: 0px;
@@ -296,8 +310,13 @@ main{
 .category_film {
     background-color: #200a14;
     border: solid 1px #610f28;
+    transition: width 2s;
+    transition: height 2s;
 }
-
+.category_film:hover{
+    width: 230px;
+    height: 120px;
+} 
 .film_line {
     background-color: #390f1e;
 }
@@ -309,8 +328,13 @@ main{
 .category_info {
     background-color: #0a1225;
     border: solid 1px #152b55;
+    transition: width 2s;
+    transition: height 2s;
 }
-
+.category_info:hover{
+    width: 230px;
+    height: 120px;
+}
 .info_line {
     background-color: #162e61;
 }
@@ -322,6 +346,8 @@ main{
 .category_love {
     background-color: #200a14;
     border: solid 1px #511834;
+    opacity: 0.8;
+    cursor: not-allowed;
 }
 
 .love_line {
@@ -335,6 +361,8 @@ main{
 .category_music {
     background-color: #061612;
     border: solid 1px #09573e;
+    opacity: 0.8;
+    cursor: not-allowed;
 }
 
 .music_line {
@@ -365,6 +393,27 @@ main{
     font-size: 10px !important;
 }
 
+.snackbar {
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: #34c494;
+    color: white;
+    width: fit-content;
+    opacity: 0;
+    transform: translate(-50%, 0);
+    transition: transform 0.3s ease;   
+    visibility: hidden; 
+}
+
+.snackbar.active {
+    display: flex;
+    opacity: 1;
+    transform: translate(-50%, 10px);
+    visibility: visible;
+}
 /******DEBUT DU FOOTER*****/
 footer{
     display: flex;
@@ -387,3 +436,158 @@ footer{
     font-weight: 600;
     font-size: 12px;
 } 
+
+
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #d1d1d1 25%,
+        #e2e2e2 50%,
+        #d1d1d1 75%
+    );
+    background-size: 200% 100%;
+    animation: skeletonloading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeletonloading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton_header_container {
+    background-color: #d1d1d1;
+}
+
+.skeleton_greetings {
+    width: 80px;
+    height: 15px;
+}
+
+.skeleton_username {
+    width: 130px;
+    height: 28px;
+}
+
+.skeleton_wave {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.skeleton_app_name {
+    width: 70px;
+    height: 30px;
+}
+
+.skeleton_avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.skeleton_schedule {
+    width: 70px;
+    height: 20px;
+}
+
+.skeleton_date {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.skeleton_plan {
+    width: 30px;
+    height: 10px;
+}
+
+
+.skeleton_program_container {
+    background-color: #d1d1d1;
+}
+
+.skeleton_program_icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+}
+
+.skeleton_program_name {
+    width: 100px;
+    height: 14px;
+}
+
+.skeleton_program_description {
+    width: 180px;
+    height: 13px;
+}
+
+
+.skeleton_category {
+    background-color: #d1d1d1;
+    border: none;
+    cursor: default;
+    opacity: 1;
+}
+
+.skeleton_category_icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+}
+
+.skeleton_category_name {
+    width: 100px;
+    height: 20px;
+}
+
+.skeleton_category_line {
+    width: 80%;
+    height: 18px;
+    border-radius: 10px;
+}
+
+
+.skeleton_footer_icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.skeleton_footer_text {
+    width: 50px;
+    height: 12px;
+    margin-top: 4px;
+}
+
+
+#container.loading {
+    background-color: #d3d3d3;
+}
+
+#container.loading .header_container {
+    background-color: #d3d3d3;
+}
+
+#container.loading .schedule_container {
+    background-color: #d3d3d3;
+}
+
+#container.loading .main_background {
+    background-color: #d3d3d3;
+}
+
+#container.loading .program_container {
+    background-color: #d3d3d3;
+}
+
+#container.loading footer {
+    background-color: #d3d3d3;
+}

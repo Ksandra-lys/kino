@@ -4,14 +4,14 @@ import { pageRedirect } from "../helpers/pageRedirect.mts"
 //import { categoryPageOnDepositDays } from "../components/categoryPageOnDepositDays.mts"
 //import { issaProposition, yasmineProposition, rayanProposition } from "../data/categoriesOnDepositDaysData.mts"
 document.addEventListener("DOMContentLoaded", () => {
-    const programContainer = document.querySelector(".program_container")
+    const programContainer = document.querySelector(".program_container") as HTMLElement
     programContainer.innerHTML = depositProgram({
         programIcon: "/assets/icons/download.svg",
         programName: "DÉPÔT DE THÈMES . LUN → MER",
         programDescription: "Proposez un sujet à débattre samedi."
     })
 
-    const footerContainer = document.querySelector("footer")
+    const footerContainer = document.querySelector("footer") as HTMLElement
     footerContainer.innerHTML = categoryPageFooter()
     // const categoryPropositionsContainer = document.querySelector(".category_propositions_container")
     // categoryPropositionsContainer.innerHTML = categoryPageOnDepositDays({
@@ -27,5 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     pageRedirect("depositDaysHomepage.html", ".back_btn")
     pageRedirect("depositDaysFilmPage.html", "footer .category")
+    pageRedirect("depositDaysFilmPage.html",".footer_category_film")
 
 }) 

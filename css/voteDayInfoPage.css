@@ -59,6 +59,11 @@ header .date {
 /*******FIN DU HEADER*********/
 
 /*********DEBUT DU MAIN******/
+main{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 .program_container {
     background-color: #0b1836;
     display: flex;
@@ -220,4 +225,27 @@ header .date {
     color: inherit;
     font-size: 13px;
     font-weight: bolder;
+}
+
+/*******DEBUT DU FOOTER*******/
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #290e2a;
+    padding: 8px 20px;
+    color: #9b97a0;
+}
+.footer_category{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    cursor: pointer;
+}
+.footer_category img{
+    width: 20px;
+    height: 20px;
+}
+.footer_category span{
+    font-weight: 600;
+    font-size: 12px; 
 }

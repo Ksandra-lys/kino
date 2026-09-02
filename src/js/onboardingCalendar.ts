@@ -1,9 +1,14 @@
 import { pageRedirect } from "../helpers/pageRedirect.mjs"
 import { calendarOnboarding } from "../components/calendarOnboarding.mts"
 import { onboardingFooter } from "../components/onboardingFooter.mts"
-//import { showPaginationDots } from "../modules/showPaginationDots.mjs"
 document.addEventListener("DOMContentLoaded", () => {
-
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((reg) => console.log('Service Worker enregistré !', reg.scope))
+        .catch((err) => console.error('Erreur :', err));
+    });
+  }
     const footerContainer = document.querySelector("footer") as HTMLElement
     footerContainer.innerHTML = onboardingFooter({
         descriptionStep: "Lun → Sam ",

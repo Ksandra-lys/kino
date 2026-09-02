@@ -10,7 +10,7 @@ export async function fetchData(endpoint: string, options: optionsFetchdata) {
 
     const res = await fetch(`${apiBaseUrl}/${endpoint}`, {
         method,
-        credentials: "include",
+        credentials: "include", 
         headers: {
             ...(data instanceof FormData ? {} : {
                 "Content-Type": "application/json"
@@ -23,48 +23,46 @@ export async function fetchData(endpoint: string, options: optionsFetchdata) {
             }),
             ...headers
         },
-        // body: data ? JSON.stringify(data) : null
         body: data instanceof FormData ? data
             : data
                 ? JSON.stringify(data)
                 : null
     });
     const status = res.status;
-    if (status === 401) {
-        const refreshRes = await fetch(`${apiBaseUrl}/api/auth/refresh`, {
-            method: "POST",
-            credentials: "include",
-            headers: {
-                ...(data instanceof FormData ? {} : {
-                    "Content-Type": "application/json"
-                }),
+    // if (status === 401) {
+    //     const refreshRes = await fetch(`${apiBaseUrl}/api/auth/refresh`, {
+    //         method: "POST",
+    //         credentials: "include", 
+    //         headers: {
+    //             ...(data instanceof FormData ? {} : {
+    //                 "Content-Type": "application/json"
+    //             }),
 
-                "Accept": "application/json",
+    //             "Accept": "application/json", 
 
-            },
-        })
-        if (!refreshRes.ok) {
-            throw {
-                status,
-                message: "Session expirée"
-            }
-        }
-        const refreshResult = await refreshRes.json().catch(() => null)
-        const accessToken = refreshResult.accessToken
-        //localStorage.setItem("acces", refreshResult.accessToken)
+    //         },
+    //     })
+    //     if (!refreshRes.ok) {
+    //         throw {
+    //             status,
+    //             message: "Session expirée"
+    //         }
+    //     }
+    //     const refreshResult = await refreshRes.json().catch(() => null)
+    //     const accessToken = refreshResult.accessToken
         
-        return await fetchData(endpoint, {
-            ...options,
-            token: accessToken
-        })
-    }
+    //     return await fetchData(endpoint, {
+    //         ...options,
+    //         token: accessToken
+    //     })
+    // }
 
     if (status === 204) return { result: null, status };
     const result = await res.json().catch(() => null);
     if (!res.ok) {
         throw {
             status,
-            message: result?.message
+            message: result?.error 
         };
     }
 

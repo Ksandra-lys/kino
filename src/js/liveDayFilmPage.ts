@@ -3,7 +3,7 @@ import { pageRedirect } from "../helpers/pageRedirect.mts"
 document.addEventListener("DOMContentLoaded", () => {
     pageRedirect("liveDayHomePage.html", ".back_btn")
 
-    const publishBtn = document.querySelector(".publish_btn")
+    const publishBtn = document.querySelector(".publish_btn") as HTMLElement
     const commentsInput = document.getElementById("commentInput") as HTMLTextAreaElement
     const commentSectionBottom = document.querySelector(".comment_section_bottom_container") as HTMLElement
     publishBtn.addEventListener("click", () => {

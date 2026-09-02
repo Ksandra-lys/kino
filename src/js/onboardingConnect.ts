@@ -2,6 +2,13 @@ import { pageRedirect } from "../helpers/pageRedirect.mjs"
 import { showPaginationDots } from "../helpers/showPaginationDots.mjs"
 import { onboardingFooter } from "../components/onboardingFooter.mts"
 document.addEventListener("DOMContentLoaded", () => {
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((reg) => console.log('Service Worker enregistré !', reg.scope))
+        .catch((err) => console.error('Erreur :', err));
+    });
+  }
     const footerContainer = document.querySelector("footer") as HTMLElement
     footerContainer.innerHTML = onboardingFooter({
         descriptionStep: "Samedi Soir",

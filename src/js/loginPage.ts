@@ -1,6 +1,5 @@
-import { fetchData } from "../helpers/fetchData.mts"
 import { pageRedirect } from "../helpers/pageRedirect.mts"
-
+import { safeFetchData } from "../helpers/safeFetch.mts"
 document.addEventListener("DOMContentLoaded", () => {
     pageRedirect("inscriptionPage.html", ".back_btn")
 
@@ -8,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const input = document.querySelector("input") as HTMLInputElement
     button.disabled = true
     input.addEventListener("input", () => {
-        if (input.value !== "") {
+        if (input.value !== "") { 
             button.disabled = false
-        } 
+        }
     })
 
-    document.addEventListener("click", async(e) => {
+    document.addEventListener("click", async (e) => {
         const target = e.target as HTMLElement
         const email = (document.getElementById("email") as HTMLInputElement).value
         const emailErrorMsg = document.getElementById("emailErrorMsg") as HTMLElement
@@ -29,14 +28,27 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (email !== "" && emailRegExp.test(email)) {
-                await fetchData("api/auth/send-otp",{
-                    method : "POST",
-                    data: {
-                        email: email
+                try {
+                    const sendOtp = await safeFetchData("api/auth/send-otp", {
+                        method: "POST",
+                        data: {
+                            email: email
+                        }
+                    })
+                    const timeLeft = sendOtp.result.expiresInSeconds
+                    sessionStorage.removeItem("calendarDay")
+                    sessionStorage.setItem("timeleft", timeLeft)
+                    sessionStorage.setItem("email",email)
+                    sessionStorage.setItem("snackbar", "Connexion réussie")
+                    window.location.href = "authentificationPage.html"
+                } catch (error) {
+                    if (error instanceof Error) {
+                        console.error(error.message)
+                    } else {
+                        console.error(error)
                     }
-                })
-           
-                window.location.href = "authentificationPage.html"
+
+                }
             }
         }
     })

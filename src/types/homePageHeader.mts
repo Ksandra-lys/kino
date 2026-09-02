@@ -1,5 +1,5 @@
 export type homePageHeader = {
-    day: string, 
+    day: string,  
     date: string, 
     plan: string
 }

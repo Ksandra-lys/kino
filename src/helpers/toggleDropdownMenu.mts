@@ -1,4 +1,4 @@
-export function toggleDropdownMenu(targetElement: string, menuElement: HTMLElement){
+export function toggleDropdownMenu(targetElement: string, menuElement: HTMLElement): void{
     document.addEventListener("click",(e)=>{
         const target = e.target as HTMLElement
         if(target.closest(targetElement)){

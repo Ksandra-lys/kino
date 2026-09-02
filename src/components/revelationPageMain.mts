@@ -1,21 +1,22 @@
-export function themeRevelationPageMain(title:string, themeName:string,
-numberLikes:string,scenaristName?:string,):string{
+import type { mostVotedFilms } from "../types/mostVotedFilm.mts"
+export function themeRevelationPageMain(filmResult: mostVotedFilms):string{
     return `
-         <img src="/assets/icons/trophy.svg" alt="" class="trophy_icon">
-                <span class="title">${title}</span>
-                <span class="theme_name">${themeName}</span>
-                ${scenaristName ? `<span class="scenarist_name">${scenaristName}</span>`: ""}
+         <img src="/assets/icons/trophy.svg" alt="" class="trophy_icon"> 
+                <span class="title">FILM DE LA SEMAINE</span>
+                <span class="theme_name">${filmResult.title}</span>
+                ${filmResult.director ? `<span class="scenarist_name">${filmResult.director}</span>`: ""}
                 
                 <div class="reactions_container">
                     <img src="/assets/icons/love.svg" alt="" class="like_icon">
-                    <span class="number_likes">${numberLikes} votes</span>
+                    ${filmResult.voteCount <= 1 ? `<span class="number_likes">${filmResult.voteCount} vote</span>`:
+                `<span class="number_likes">${filmResult.voteCount} votes</span>`}
                 </div>    
-    `
+    ` 
 } 
 
 export function revelationPageMainLiveSubscription(liveHour:string, liveSubscribers:string,
     reservationBtnIcon:string,reservationSpan:string
-){
+):string{
     return `
         <div class="live_info_container">
                     <img src="/assets/icons/calendar.svg" alt="">

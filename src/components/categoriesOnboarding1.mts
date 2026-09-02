@@ -2,7 +2,7 @@ import { categoriesStatus } from "../data/categoriesStatus.mts";
 import type { categoriesOnboarding } from "../types/categoriesOnboarding.mts";
 
 export function onboardingCategoriesMain(data: categoriesOnboarding): string {
-    const status = categoriesStatus[data.status];
+    const status = data.status ? categoriesStatus[data.status]:undefined;
     return `<div class="${data.category} category">
                 <img src="${data.img}" alt="">
                 <span>${data.name}</span>
@@ -10,6 +10,5 @@ export function onboardingCategoriesMain(data: categoriesOnboarding): string {
                 ${status?.lineIcon ? `<img class="line_icon" src="${status?.lineIcon}">` : ""}
                 ${status?.lineSpan ? `<span class="line_span">${status?.lineSpan}</span>` : ""}
                 </div>
-            </div>`;  
+            </div>`;
 }
- 

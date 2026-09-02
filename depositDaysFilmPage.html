@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/depositDaysFilmPage.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#007bff">
 </head>
-
+ 
 <body>
     <div id="container">
-        <span class="snackbar"></span>
+        <span class="snackbar">  
+            
+        </span>
        
         <header>
             <div class="header_text">
                 <span class="back_btn">← Retour</span>
-                <span class="title">Films déposés</span>
+                <span class="title">Films déposés</span> 
                 <span class="date">Lun → Mer</span>
             </div>
             <div class="header_line"></div>
@@ -25,23 +29,14 @@
             <div class="program_container">
 
             </div>
-            <div class="deposit_btn">
-                <span>+</span>
+            <button class="deposit_btn">
+                <span>+</span>  
                 <span class="deposit_btn_text">Déposer votre film</span>
-            </div>
+            </button>
             <div class="category_propositions_container">
-                <!-- <div class="upload_films"> 
-                    <img src="/assets/icons/camera.svg" alt="" class="upload_films_pictures">
-                    <div class="upload_films_description">
-                        <span class="film_title">Black Panther : Wakanda Forever</span>
-                        <span class="film_director">Ryan Cooper · 2022 · VF</span>
-                        <span class="film_pitch">"fun"</span>
-                        <span class="film_user">par toi</span>
-                        <button class="updatefilm_btn">Modifier mon film</button>
-                    </div>
-                </div> -->
+               
             </div>
-            <div class="depositfilm_modal_background">
+            <div class="depositfilm_modal_background"> 
                 <div class="depositfilm_modal_container">
                     <div class="depositfilm_modal_line"></div>
                     <span class="depositfilm_modal_title">Déposer un film</span>
@@ -49,7 +44,7 @@
                         <div class="input_container">
                             <label for="title">TITRE</label>
                             <input type="text" name="title" id="title" class="deposit_input"
-                                placeholder="Tape un titre — les suggestions arrivent">
+                            placeholder="Tape un titre — les suggestions arrivent">
                             <div class="films_suggestions">
 
                             </div>
@@ -82,6 +77,7 @@
                                     <span>Ajouter l'affiche du film (optionnel)</span>
                                 </div>
                             </label>
+                            <span class="posterErrorMsg"></span>
                         </div>
                         <div class="input_container">
                             <label for="">POURQUOI CE FILM (OPTIONNEL) </label>
@@ -100,22 +96,7 @@
             </div> -->
         </main>
         <footer>
-            <!-- <div class="category">
-                <img src="/assets/icons/film.svg" alt="">
-                <span>Film</span>
-            </div>
-            <div class="category">
-                <img src="/assets/icons/laptop.svg" alt="">
-                <span>Info</span>
-            </div>
-            <div class="category">
-                <img src="/assets/icons/heart.svg" alt="">
-                <span>Love</span>
-            </div>
-            <div class="category">
-                <img src="/assets/icons/music_grey.svg" alt="">
-                <span>Musique</span>
-            </div> -->
+            
         </footer>
     </div>
 </body>

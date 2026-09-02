@@ -8,10 +8,10 @@ export const categoriesStatus = {
         lineIcon : "/assets/icons/love.svg",
         lineSpan : "Vote ouvert"
     },
-     
+      
     revelation:{
         lineIcon : "/assets/icons/trophy.svg",
-        lineSpan : "Révélations"
+        lineSpan : "Révélation"
     }, 
 
     live:{

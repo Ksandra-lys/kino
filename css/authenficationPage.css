@@ -129,12 +129,38 @@ img {
     font-weight: bolder;
     font-size: 40px;
 }
-
+.otp_error_msg{
+    font-size: 14px;
+    font-weight: bolder;
+    color: #851739;
+}
 .resend {
     color: #676070;
     font-size: 14px;
     font-weight: 540;
     cursor: pointer;
+}
+
+.snackbar {
+    position: fixed;
+    left: 50%;
+    top: 50px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: #34c494;
+    color: white;
+    width: fit-content;
+    opacity: 0;
+    transform: translate(-50%, 0);
+    transition: transform 0.3s ease;   
+    visibility: hidden; 
+}
+
+.snackbar.active {
+    display: flex;
+    opacity: 1;
+    transform: translate(-50%, 10px);
+    visibility: visible;
 }
 /****FIN DU MAIN***/
 

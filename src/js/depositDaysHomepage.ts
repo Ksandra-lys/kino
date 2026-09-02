@@ -7,27 +7,54 @@ import { homepageCalendarData } from "../data/homepageCalendarData.mts"
 import { homePageHeader } from "../components/homepageHeader.mts"
 import { toggleDropdownMenu } from "../helpers/toggleDropdownMenu.mts"
 import { categoryPageFooter } from "../components/categoryPageFooter.mts"
-import { safeFetchData } from "../modules/safeFetch.mts"
+import { safeFetchData } from "../helpers/safeFetch.mts"
+import { activeCalendarDay } from "../modules/activeCalendarDay.mts"
+import { editProfilePicture } from "../helpers/editProfilePicture.mts"
+import { homePageSkeleton } from "../components/homePageSkeleton.mts"
+import { showSnackbar } from "../helpers/showSnackBar.mts"
 document.addEventListener("DOMContentLoaded", async () => {
-    let selectedDate = new Date()
-    console.log(selectedDate)
-    const { result: user } = await safeFetchData("api/auth/me", {
-        method: "GET",
-    });
+    homePageSkeleton()
 
-    const headerContainer = document.querySelector(".header_container")
-    headerContainer.innerHTML = homePageHeader(user.user);
+    const snackbar = document.querySelector(".snackbar") as HTMLElement
+
+    try {
+        const userInfo = await safeFetchData("api/auth/me", {
+            method: "GET",
+        });
+
+        const headerContainer = document.querySelector(".header_container") as HTMLElement
+        headerContainer.innerHTML = homePageHeader(userInfo.result.user);
+        headerContainer.classList.remove("skeleton_header_container");
+
+    } catch (error) {
+        
+        // if (error instanceof Error) {
+        //     console.error(error.message)
+        // } else {
+        //     console.error(error)
+        // }
+        if (error instanceof Error) {
+                                console.error(error.message)
+                                
+                            } else {
+                                showSnackbar(error.message)
+                                snackbar.style.backgroundColor = "red"
+                            } 
+
+    }
 
     const scheduleText = document.querySelector(".schedule_text") as HTMLElement
     scheduleText.innerHTML = homepageCalendarData.map(data => homepageCalendar(data))
         .join("");
+    activeCalendarDay()
 
     const programContainer = document.querySelector(".program_container") as HTMLElement
     programContainer.innerHTML = depositProgram({
         programIcon: "/assets/icons/download.svg",
         programName: "DÉPÔT OUVERT",
-        programDescription: "Déposez votre film ou thème — jusqu'au mercredi"
+        programDescription: "Déposez votre film ou thème — jusqu'à mercredi"
     })
+    programContainer.classList.remove("skeleton_program_container");
 
     const categoryContainer = document.querySelector(".category_container") as HTMLElement
     categoryContainer.innerHTML = onboardingCategoriesMain({
@@ -47,27 +74,29 @@ document.addEventListener("DOMContentLoaded", async () => {
             status: "deposit"
         })
 
-    pageRedirect("depositDaysFilmPage.html", ".category_film")
-    pageRedirect("depositDaysInfoPage.html", ".category_info")
-    pageRedirect("voteDayHomePage.html", ".Jeudi")
-
-    const userProfile = document.querySelector(".user_picture") as HTMLElement
-    const dropdownMenuContainer = document.querySelector(".dropdown_menu") as HTMLElement
-    toggleDropdownMenu(userProfile, dropdownMenuContainer)
-
-    const footerContainer = document.querySelector("footer")
+    const footerContainer = document.querySelector("footer") as HTMLElement
     footerContainer.innerHTML = categoryPageFooter()
 
-    pageRedirect("loginPage.html", ".logout")
 
-    // const input = document.getElementById("photo") as HTMLInputElement;
-    // const editPhoto = document.querySelector(".edit_picture") as HTMLElement
-    // const preview = document.querySelector(".user_picture img") as HTMLImageElement
-    // editPhoto.addEventListener("click", () => {
-    //     const file = input.files?.[0];
-    //     if (file) {
-    //         preview.src = URL.createObjectURL(file);
-    //         preview.classList.add("active");
-    //     }
-    // });
+    const message = sessionStorage.getItem("snackbar");
+    if (message) {
+        sessionStorage.removeItem("snackbar");  
+    }
+
+    pageRedirect("depositDaysFilmPage.html", ".category_film")
+    pageRedirect("depositDaysInfoPage.html", ".category_info")
+    pageRedirect("depositDaysInfoPage.html", ".footer_category_info")
+    pageRedirect("depositDaysFilmPage.html", ".footer_category_film")
+    pageRedirect("voteDayHomePage.html", ".Jeudi")
+
+    const dropdownMenuContainer = document.querySelector(".dropdown_menu") as HTMLElement
+    toggleDropdownMenu(".avatar_picture", dropdownMenuContainer)
+
+    pageRedirect("loginPage.html", ".logout") 
+
+    editProfilePicture()
+    const container = document.getElementById("container") as HTMLElement
+    if (container) {
+        container.classList.remove("loading");
+    }
 }) 
